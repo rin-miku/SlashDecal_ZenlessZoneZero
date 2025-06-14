@@ -10,13 +10,5 @@ public class Weapon : MonoBehaviour
     {
         GameObject temp = Instantiate(decalPrefab);
         temp.transform.position = collision.contacts[0].point;
-        foreach (ContactPoint contact in collision.contacts)
-        {
-            Vector3 hitPoint = contact.point;
-            Vector3 hitNormal = contact.normal;
-
-            Debug.Log("Hit point: " + hitPoint);
-            Debug.DrawRay(hitPoint, hitNormal, Color.red, 1f);
-        }
     }
 }
